@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { createNote, getNotes, deleteNote } = require('../controllers/noteController');
-const { protect } = require('../middlewares/authMiddleware'); // Assuming your middleware is here
+const { protect } = require('../middlewares/authMiddleware'); 
 
-// All these routes require authentication
+// All these routes require authentication (protect middleware)
 router.route('/')
     .post(protect, createNote)
     .get(protect, getNotes);

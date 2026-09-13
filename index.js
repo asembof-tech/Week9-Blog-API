@@ -2,19 +2,22 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./Database/connectDB");
+
+// Import Routes
 const articleRoutes = require("./routes/articleRoutes");
 const authRoutes = require('./routes/authRoutes');
-const noteRoutes = require('./routes/noteRoutes');
+const noteRoutes = require('./routes/noteRoutes'); // Crucial import
+
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Mount Routes
 app.use('/api/auth', authRoutes);
 app.use("/articles", articleRoutes);
-app.use("/api/notes", noteRoutes);
+app.use("/api/notes", noteRoutes); // Crucial mount path
 
 // Base route
 app.get("/", (req, res) => {
