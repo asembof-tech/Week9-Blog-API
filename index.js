@@ -4,7 +4,7 @@ const cors = require("cors");
 const connectDB = require("./Database/connectDB");
 const articleRoutes = require("./routes/articleRoutes");
 const authRoutes = require('./routes/authRoutes');
-
+const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 
 // Middleware
